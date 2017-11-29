@@ -22,11 +22,18 @@ public class Cliente implements Entidade {
     }
 
     public Cliente(String nome, String telefone, String cpf, String email) {
+        this.id=0;
         this.nome = nome;
         this.telefone = telefone;
         this.cpf = cpf;
         this.email = email;
     }
+
+    public Cliente(int i, String nome, Object object, String cpf, Object object0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+  
 
     public String getNome() {
         return nome;

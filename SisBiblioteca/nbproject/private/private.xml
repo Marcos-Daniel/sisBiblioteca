@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/marcos/sisBiblioteca/SisBiblioteca/src/Persistencia/ClienteDao.java</file>
+            <file>file:/home/marcos/sisBiblioteca/SisBiblioteca/src/Apresentacao/ListarClientes.java</file>
+            <file>file:/home/marcos/sisBiblioteca/SisBiblioteca/src/Apresentacao/CadastrarCliente.java</file>
+            <file>file:/home/marcos/sisBiblioteca/SisBiblioteca/src/Aplicacao/Repositorio.java</file>
+            <file>file:/home/marcos/sisBiblioteca/SisBiblioteca/src/Aplicacao/ClienteRepositorio.java</file>
+            <file>file:/home/marcos/sisBiblioteca/SisBiblioteca/src/Persistencia/DaoGenerica.java</file>
+            <file>file:/home/marcos/sisBiblioteca/SisBiblioteca/src/Aplicacao/Cliente.java</file>
+            <file>file:/home/marcos/sisBiblioteca/SisBiblioteca/src/Persistencia/Conexao.java</file>
+        </group>
     </open-files>
 </project-private>

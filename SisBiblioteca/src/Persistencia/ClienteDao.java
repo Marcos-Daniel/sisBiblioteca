@@ -21,10 +21,10 @@ import java.util.logging.Logger;
 public class ClienteDao extends DaoGenerica<Cliente> implements ClienteRepositorio {
 
     public ClienteDao() throws SQLException {
-        setConsultaCadastrar("INSERT INTO filial(uf,cidade,bairro,rua,numEstabelicimento)VALUES(?,?,?,?,?)");
+        setConsultaCadastrar("INSERT INTO usuario(nome,telefone,cpf,email)VALUES(?,?,?,?)");
         setConsultaEditar("UPDATE filial SET uf = ?,cidade = ?,bairro = ?,rua = ?,numEstabelicimento = ? WHERE id = ?");
         setConsultaExcluir("DELETE FROM filial WHERE id = ?");
-        setConsultaBuscar("SELECT id,uf,cidade,bairro,rua,numEstabelicimento FROM filial");
+        setConsultaBuscar("SELECT id,nome,telefone,cpf,email FROM usuario");
         setConsultaFiltrar("select id,uf,cidade,bairro,rua,numEstabelicimento from filial ");
     }
     
