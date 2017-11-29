@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
  * @author marcos
  */
 public class ListarClientes extends javax.swing.JFrame {
-    ClienteRepositorio dao = GerenciadorDeReferencias.getClientes();;
+    ClienteRepositorio dao;
     Cliente novo = new Cliente();
     ArrayList<Cliente> busca = new ArrayList<>();
     Cliente entidade;
@@ -30,6 +30,7 @@ public class ListarClientes extends javax.swing.JFrame {
      * Creates new form ListarClientes
      */
     public ListarClientes() {
+          this.dao = GerenciadorDeReferencias.getClientes();
         initComponents();
     }
 
@@ -51,6 +52,7 @@ public class ListarClientes extends javax.swing.JFrame {
         tblContatos = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
+        btneditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -103,6 +105,13 @@ public class ListarClientes extends javax.swing.JFrame {
             }
         });
 
+        btneditar.setText("editar");
+        btneditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneditarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -124,6 +133,8 @@ public class ListarClientes extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btneditar)
+                                .addGap(29, 29, 29)
                                 .addComponent(btnExcluir)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2)))))
@@ -147,7 +158,8 @@ public class ListarClientes extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
-                    .addComponent(btnExcluir))
+                    .addComponent(btnExcluir)
+                    .addComponent(btneditar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -199,6 +211,25 @@ public class ListarClientes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
+    private void btneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditarActionPerformed
+       int selecionada= tblContatos.getSelectedRow();
+       if(selecionada>= 0){
+          Cliente cliente= busca.get(selecionada);
+          String mensagem="Deseja editar este cliente?";
+          int opcao=JOptionPane.showConfirmDialog(this,mensagem,"Mensagem de confirmação",JOptionPane.YES_NO_OPTION);
+          if(opcao==JOptionPane.YES_OPTION){
+              System.out.println(cliente.getId());
+              CadastrarCliente telaCadastrarCliente= new CadastrarCliente(cliente,this);
+              telaCadastrarCliente.setVisible(true);
+              
+          }
+          else {
+              JOptionPane.showMessageDialog(this, "Escolha uma posiçao na tabela pra editar");
+          }
+              
+       }
+    }//GEN-LAST:event_btneditarActionPerformed
+
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -234,6 +265,7 @@ public class ListarClientes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btneditar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

@@ -19,7 +19,7 @@ public class Conexao {
         Class.forName("com.mysql.jdbc.Driver");
     }
     public static Connection criarConexao() throws SQLException{
-        return (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/dbbiblioteca","root","root");
+        return (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/dbbiblioteca","root","");
     }
     
 }

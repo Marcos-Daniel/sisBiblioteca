@@ -15,11 +15,16 @@ import Aplicacao.ClienteRepositorio;
 public class CadastrarCliente extends javax.swing.JFrame {
     Cliente novo = new Cliente();
     ClienteRepositorio dao = GerenciadorDeReferencias.getClientes();
+    ListarClientes telaListarClientes;
     /**
      * Creates new form CadastrarCliente
      */
     public CadastrarCliente() {
         initComponents();
+    }
+
+    CadastrarCliente(Cliente cliente, ListarClientes aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
